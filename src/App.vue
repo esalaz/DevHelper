@@ -17,12 +17,13 @@ let config = {
 
 let app = Firebase.initializeApp(config);
 let db = app.database();
+
 let articleRef = db.ref('articles');
 
 export default {
   name: 'App',
   firebase: {
-    articles: a
+    articles: articlesRef
   }
 }
 </script>
