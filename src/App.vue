@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import Firebase from 'firebase'
 
 let config = {
   apiKey: "AIzaSyCl357TsvSsLcHQvx-5xMBYZk0-RJ8VMj0",
@@ -14,8 +15,15 @@ let config = {
   messagingSenderId: "1034410814651"
 };
 
+let app = Firebase.initializeApp(config);
+let db = app.database();
+let articleRef = db.ref('articles');
+
 export default {
-  name: 'App'
+  name: 'App',
+  firebase: {
+    articles: a
+  }
 }
 </script>
 
