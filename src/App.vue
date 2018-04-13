@@ -3,6 +3,30 @@
     <div class="page-header">
       <h1> DevHelper </h1>
     </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3> Add Article</h3>
+      </div>
+      <div class="panel-body">
+        <form id="form" class="form-inline">
+          <div class="form-group">
+            <label for="articlesTitle">Title -</label>
+            <input type="text" id="articleTitle" class="form-control" v-model="newArticle.title">
+          </div>
+          <div class="form-group">
+            <label for="articlesTitle">Author -</label>
+            <input type="text" id="articleAuthor" class="form-control" v-model="newArticle.author">
+          </div>
+          <div class="form-group">
+            <label for="articlesTitle">URL -</label>
+            <input type="text" id="articleUrl" class="form-control" v-model="newArticle.url">
+          </div>
+          <br>
+          <input type="submit" class="btn btn-primary" value="Add Article">
+        </form>
+      </div>
+    </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3> Find your Tutorial </h3>
@@ -22,7 +46,7 @@
           <tbody>
             <tr v-for="article in Articles" :key="article.id">
               <td>
-                <a v-bind:href="book.url">{{article.title}}</a>
+                <a v-bind:href="article.url">{{article.title}}</a>
               </td>
               <td>
                 {{article.author}}
@@ -56,6 +80,15 @@ export default {
   name: 'App',
   firebase: {
     Articles: articleRef
+  },
+  data () {
+    return {
+      newArticle: {
+        title: '',
+        author: '',
+        url: ''
+      }
+    }
   }
 }
 </script>
@@ -65,7 +98,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
