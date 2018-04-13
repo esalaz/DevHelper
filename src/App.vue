@@ -48,8 +48,14 @@
               <td>
                 {{article.author}}
               </td>
+<<<<<<< Updated upstream
               <td>
                 <img src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
+=======
+              <td class="edit-delete-icons">
+                <img class="trash-icon" src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
+                <img class="edit-icon" src="./assets/edit.svg" alt="edit-icon" v-on:click="editArticle(article)">
+>>>>>>> Stashed changes
               </td>
             </tr>
           </tbody>
@@ -96,9 +102,17 @@ export default {
       this.newArticle.title = ''
       this.newArticle.author = ''
       this.newArticle.url = ''
+      toastr.success("Articles Created!")
     },
     removeArticle: function (article) {
       articleRef.child(article['.key']).remove()
+<<<<<<< Updated upstream
+=======
+      toastr.success("Poof! Articles Deleted!")
+    },
+    editArticle: function (article) {
+      articleRef.child(article['.key']).update()
+>>>>>>> Stashed changes
     }
   }
 }
