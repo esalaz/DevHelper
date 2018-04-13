@@ -9,7 +9,7 @@
         <h3> Add Article</h3>
       </div>
       <div class="panel-body">
-        <form id="form" class="form-inline">
+        <form id="form" class="form-inline" v-on:submit.prevent="addArticle">
           <div class="form-group">
             <label for="articlesTitle">Title -</label>
             <input type="text" id="articleTitle" class="form-control" v-model="newArticle.title">
@@ -88,6 +88,14 @@ export default {
         author: '',
         url: ''
       }
+    }
+  },
+  methods: {
+    addArticle: function () {
+      articleRef.push(this.newArticle)
+      this.newArticle.title = ''
+      this.newArticle.author = ''
+      this.newArticle.url = ''
     }
   }
 }
