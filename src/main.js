@@ -19,3 +19,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+require('../node_modules/bootstrap/dist/css/bootstrap.css')

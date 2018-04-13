@@ -49,8 +49,7 @@
                 {{article.author}}
               </td>
               <td>
-                <span class="glyphicon glyphicon-trash" v-on:click="removeArticle(article)"></span>
-                <i class="far fa-trash-alt"></i>
+                <img src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
               </td>
             </tr>
           </tbody>
@@ -97,6 +96,9 @@ export default {
       this.newArticle.title = ''
       this.newArticle.author = ''
       this.newArticle.url = ''
+    },
+    removeArticle: function (article) {
+      articleRef.child(article['.key']).remove()
     }
   }
 }
