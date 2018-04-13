@@ -35,12 +35,9 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>
-                Title
-              </th>
-              <th>
-                Author
-              </th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +47,10 @@
               </td>
               <td>
                 {{article.author}}
+              </td>
+              <td>
+                <span class="glyphicon glyphicon-trash" v-on:click="removeArticle(article)"></span>
+                <i class="far fa-trash-alt"></i>
               </td>
             </tr>
           </tbody>
