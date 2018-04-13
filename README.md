@@ -1,3 +1,4 @@
+https://fontawesome.com/license
 # devhelper
 
 > A Vue.js project
