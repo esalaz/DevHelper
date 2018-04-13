@@ -49,8 +49,7 @@
                 {{article.author}}
               </td>
               <td>
-                <span class="glyphicon glyphicon-trash" v-on:click="removeArticle(article)"></span>
-                <i class="far fa-trash-alt"></i>
+                <img class="trash-icon" src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
               </td>
             </tr>
           </tbody>
@@ -62,6 +61,7 @@
 
 <script>
 import Firebase from 'firebase'
+import toastr from 'toastr'
 
 let config = {
   apiKey: 'AIzaSyCl357TsvSsLcHQvx-5xMBYZk0-RJ8VMj0',
@@ -97,16 +97,25 @@ export default {
       this.newArticle.title = ''
       this.newArticle.author = ''
       this.newArticle.url = ''
+    },
+    removeArticle: function (article) {
+      articleRef.child(article['.key']).remove()
+      toastr.success("Poof! Articles Deleted!")
     }
   }
 }
 </script>
 
 <style>
+.trash-icon{
+  width: 2em;
+  height: 1em;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
