@@ -1,9 +1,7 @@
-<template>
-  <nav>
-    <div class="nav-wrapper green">
-      <div class="container">
-         <router-link to="/" class="brand-logo">Employee Manager</router-link>
-      </div>
+<template lang="html">
+  <nav class="nav-wrap green">
+    <div class="container">
+      <router-link to=“/“ class="brand-logo">DevHelper</router-link>
     </div>
   </nav>
 </template>
