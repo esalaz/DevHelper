@@ -23,6 +23,7 @@
             <input type="text" id="articleUrl" class="form-control" v-model="newArticle.url">
           </div>
           <br>
+          <br>
           <input type="submit" class="btn btn-primary" value="Add Article">
         </form>
       </div>
@@ -106,6 +107,8 @@ export default {
     },
     editArticle: function (article) {
       articleRef.child(article['.key']).update()
+      toastr.success('Article Changed')
+
     }
   }
 }
@@ -130,6 +133,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
