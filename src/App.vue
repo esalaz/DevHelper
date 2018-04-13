@@ -48,14 +48,9 @@
               <td>
                 {{article.author}}
               </td>
-<<<<<<< Updated upstream
-              <td>
-                <img src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
-=======
               <td class="edit-delete-icons">
                 <img class="trash-icon" src="./assets/trash-alt.svg" alt="trash-icon" v-on:click="removeArticle(article)">
                 <img class="edit-icon" src="./assets/edit.svg" alt="edit-icon" v-on:click="editArticle(article)">
->>>>>>> Stashed changes
               </td>
             </tr>
           </tbody>
@@ -67,6 +62,7 @@
 
 <script>
 import Firebase from 'firebase'
+import toastr from 'toastr'
 
 let config = {
   apiKey: 'AIzaSyCl357TsvSsLcHQvx-5xMBYZk0-RJ8VMj0',
@@ -102,23 +98,32 @@ export default {
       this.newArticle.title = ''
       this.newArticle.author = ''
       this.newArticle.url = ''
-      toastr.success("Articles Created!")
+      toastr.success('Articles Created!')
     },
     removeArticle: function (article) {
       articleRef.child(article['.key']).remove()
-<<<<<<< Updated upstream
-=======
-      toastr.success("Poof! Articles Deleted!")
+      toastr.success('Poof! Articles Deleted!')
     },
     editArticle: function (article) {
       articleRef.child(article['.key']).update()
->>>>>>> Stashed changes
     }
   }
 }
 </script>
 
 <style>
+.edit-delete-icons{
+  display: flex;
+  flex-direction: row;
+}
+.trash-icon{
+  height: 1.5em;
+  width: 1.5em;
+}
+.edit-icon{
+  height: 1.5em;
+  width: 1.5em;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
