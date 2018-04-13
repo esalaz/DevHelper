@@ -119,10 +119,12 @@ export default {
 .trash-icon{
   height: 1.5em;
   width: 1.5em;
+  margin-left: 1em;
 }
 .edit-icon{
   height: 1.5em;
   width: 1.5em;
+  margin-left: 1em;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
