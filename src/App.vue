@@ -55,7 +55,7 @@ let articleRef = db.ref('articles')
 export default {
   name: 'App',
   firebase: {
-    articles: articleRef
+    Articles: articleRef
   }
 }
 </script>
