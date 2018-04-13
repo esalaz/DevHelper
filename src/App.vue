@@ -8,31 +8,16 @@
 </template>
 
 <script>
-
 import Articles from '@/components/Articles'
-
 export default {
   name: 'App',
   components: {
     Articles
-  },
-  firebase: {
-    Articles: articleRef
-  },
-  data () {
-    return {
-      newArticle: {
-        title: '',
-        author: '',
-        url: ''
-      }
-    }
   }
 }
 </script>
 
 <style>
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

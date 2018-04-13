@@ -61,7 +61,6 @@
  </div>
 </template>
 <script>
-import Firebase from 'firebase'
 import toastr from 'toastr'
 import db from './firebaseInit'
 
